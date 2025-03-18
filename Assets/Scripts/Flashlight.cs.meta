@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 40c1a06e80071fb48853fc7efd19f29e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - flashlight: {instanceID: 0}
+  - flashlightOnSound: {fileID: 8300000, guid: 63b24e96bc3ed544cbffee43d542f05c, type: 3}
+  - flashlightOffSound: {fileID: 8300000, guid: 63b24e96bc3ed544cbffee43d542f05c, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
