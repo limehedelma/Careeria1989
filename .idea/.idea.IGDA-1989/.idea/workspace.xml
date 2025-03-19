@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4dad1c9-fd32-4b85-b3d4-072a85daa067" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.IGDA-1989/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.IGDA-1989/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/radio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/radio.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/danthaigames/DS 80s Television/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/danthaigames/DS 80s Television/Scenes/SampleScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,6 +124,7 @@
       <workItem from="1742388007882" duration="11000" />
       <workItem from="1742388379464" duration="9000" />
       <workItem from="1742388730643" duration="5000" />
+      <workItem from="1742391758474" duration="84000" />
     </task>
     <servers />
   </component>

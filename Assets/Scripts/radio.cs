@@ -13,9 +13,10 @@ public class RadioInteraction : MonoBehaviour
         {
             if (!radioAudio.isPlaying)
             {
-                radioAudio.Play();
+                radioAudio.PlayOneShot(radioAudio.clip);
             }
         }
+
       
     }
 }
