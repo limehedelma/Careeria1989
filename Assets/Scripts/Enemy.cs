@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class AudioEnemy : MonoBehaviour
 {
+    public AudioSource awakeAudioSource;
     public AudioSource enemyAudio;
     public float minDistance = 2f;
     public float maxDistance = 10f;
@@ -11,6 +12,10 @@ public class AudioEnemy : MonoBehaviour
     private Vector3 lastPosition;
     private bool gameOver = false;
 
+    void Awake()
+    {
+        awakeAudioSource.Play();
+    }
     void Start()
     {
         if (enemyAudio == null)
@@ -31,37 +36,41 @@ public class AudioEnemy : MonoBehaviour
             idleTime = 0f;
 
         lastPosition = transform.position;
+        
+        //if (idleTime >= 15f)
+        //TriggerJumpscare("You stood still too long!");
 
-        if (idleTime >= 15f)
-            TriggerJumpscare("You stood still too long!");
-
-        if (gameTimer >= 120f)
-            TriggerJumpscare("You failed to escape!");
+        //if (gameTimer >= 120f)
+        //TriggerJumpscare("You failed to escape!");
     }
 
     void RandomizeAudioDistance()
     {
-        if (gameOver) return;
-        float randomDistance = Random.Range(minDistance, maxDistance);
-        enemyAudio.spatialBlend = 1f;
-        enemyAudio.maxDistance = randomDistance;
-        enemyAudio.Play();
+        if (!awakeAudioSource.isPlaying)
+        {
+            if (gameOver) return;
+            float randomDistance = Random.Range(minDistance, maxDistance);
+            enemyAudio.spatialBlend = 1f;
+            enemyAudio.maxDistance = randomDistance;
+            enemyAudio.Play();
+        }
+       
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Exit"))
         {
-            Debug.Log("You escaped!");
-            gameOver = true;
+            //Debug.Log("You escaped!");
+            //gameOver = true;
            
         }
     }
 
     void TriggerJumpscare(string message)
     {
-        Debug.Log(message);
-        gameOver = true;
+        //Debug.Log(message);
+        //gameOver = true;
         // Implement jumpscare animation/sound here
         // Play a jumpscare sound or animation
         

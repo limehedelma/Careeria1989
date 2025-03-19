@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f4dad1c9-fd32-4b85-b3d4-072a85daa067" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.IGDA-1989/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.IGDA-1989/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MapScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MapScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/radio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/radio.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/tv.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/tv.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,6 +108,22 @@
       <workItem from="1742371274895" duration="18000" />
       <workItem from="1742371573466" duration="27000" />
       <workItem from="1742371698491" duration="118000" />
+      <workItem from="1742375183755" duration="182000" />
+      <workItem from="1742375438341" duration="6000" />
+      <workItem from="1742375514621" duration="74000" />
+      <workItem from="1742375733417" duration="53000" />
+      <workItem from="1742375860081" duration="9000" />
+      <workItem from="1742375878761" duration="162000" />
+      <workItem from="1742376083536" duration="44000" />
+      <workItem from="1742376665633" duration="77000" />
+      <workItem from="1742376983585" duration="60000" />
+      <workItem from="1742377108657" duration="9000" />
+      <workItem from="1742377151780" duration="152000" />
+      <workItem from="1742377350596" duration="111000" />
+      <workItem from="1742377584831" duration="6000" />
+      <workItem from="1742377628013" duration="24000" />
+      <workItem from="1742377707781" duration="8000" />
+      <workItem from="1742377811203" duration="25000" />
     </task>
     <servers />
   </component>
