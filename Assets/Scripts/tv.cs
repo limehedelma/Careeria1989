@@ -11,7 +11,7 @@ public class TVInteraction : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(transform.position, player.position);
-        if (distance <= interactionDistance && Input.GetKeyDown(KeyCode.E))
+        if (distance <= interactionDistance)
         {
             if (!videoPlayer.isPlaying)
             {

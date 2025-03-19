@@ -11,22 +11,11 @@ public class RadioInteraction : MonoBehaviour
         float distance = Vector3.Distance(transform.position, player.position);
         if (distance <= interactionDistance)
         {
-            
-            if (Input.GetKeyDown(KeyCode.E))
+            if (!radioAudio.isPlaying)
             {
-                if (radioAudio.isPlaying)
-                {
-                    radioAudio.Pause();
-                }
-                else
-                {
-                    radioAudio.Play();
-                }
+                radioAudio.Play();
             }
         }
-        else
-        {
-            
-        }
+      
     }
 }
