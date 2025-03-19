@@ -5,8 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4dad1c9-fd32-4b85-b3d4-072a85daa067" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/radio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/radio.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/danthaigames/DS 80s Television/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/danthaigames/DS 80s Television/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.IGDA-1989/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Paintings/PaintingCollection1/Prefabs/Painting.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Paintings/PaintingCollection1/Prefabs/Painting.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Paintings/PaintingCollection2/Prefabs/Painting.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Paintings/PaintingCollection2/Prefabs/Painting.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Realistic Glitches Lite/Demo/Materials/Floor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Realistic Glitches Lite/Demo/Materials/Floor.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Realistic Glitches Lite/Demo/Materials/Sky.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Realistic Glitches Lite/Demo/Materials/Sky.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Realistic Glitches Lite/Demo/Materials/TestMat 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Realistic Glitches Lite/Demo/Materials/TestMat 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Realistic Glitches Lite/Demo/Materials/TestMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Realistic Glitches Lite/Demo/Materials/TestMat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Realistic Glitches Lite/Demo/Materials/Wall.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Realistic Glitches Lite/Demo/Materials/Wall.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Realistic Glitches Lite/Demo/Realistic Glitches DemoScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Realistic Glitches Lite/Demo/Realistic Glitches DemoScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Realistic Glitches Lite/Demo/Realistic Glitches DemoSceneSettings.lighting" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Realistic Glitches Lite/Demo/Realistic Glitches DemoSceneSettings.lighting" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Realistic Glitches Lite/Demo/Realistic Glitches DemoSceneSettings.lighting.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Realistic Glitches Lite/Demo/Realistic Glitches DemoSceneSettings.lighting.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,6 +134,7 @@
       <workItem from="1742388379464" duration="9000" />
       <workItem from="1742388730643" duration="5000" />
       <workItem from="1742391758474" duration="84000" />
+      <workItem from="1742398859434" duration="9000" />
     </task>
     <servers />
   </component>
