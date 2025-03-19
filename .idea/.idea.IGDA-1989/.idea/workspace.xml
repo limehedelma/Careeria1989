@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f4dad1c9-fd32-4b85-b3d4-072a85daa067" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.IGDA-1989/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.IGDA-1989/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,6 +121,9 @@
       <workItem from="1742377628013" duration="24000" />
       <workItem from="1742377707781" duration="8000" />
       <workItem from="1742377811203" duration="25000" />
+      <workItem from="1742388007882" duration="11000" />
+      <workItem from="1742388379464" duration="9000" />
+      <workItem from="1742388730643" duration="5000" />
     </task>
     <servers />
   </component>
