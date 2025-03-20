@@ -6,11 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f4dad1c9-fd32-4b85-b3d4-072a85daa067" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.IGDA-1989/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.IGDA-1989/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MapScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MapScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DoorTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DoorTrigger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Triggermanager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Triggermanager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy AI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy AI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/radio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/radio.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/tv.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/tv.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,6 +140,17 @@
       <workItem from="1742485643182" duration="20000" />
       <workItem from="1742486107512" duration="7000" />
       <workItem from="1742486774966" duration="6000" />
+      <workItem from="1742488591905" duration="628000" />
+      <workItem from="1742489703031" duration="313000" />
+      <workItem from="1742490167922" duration="212000" />
+      <workItem from="1742490419007" duration="110000" />
+      <workItem from="1742490847596" duration="66000" />
+      <workItem from="1742491003978" duration="87000" />
+      <workItem from="1742491165625" duration="9000" />
+      <workItem from="1742491421268" duration="39000" />
+      <workItem from="1742491561445" duration="29000" />
+      <workItem from="1742491672835" duration="41000" />
+      <workItem from="1742492018942" duration="66000" />
     </task>
     <servers />
   </component>

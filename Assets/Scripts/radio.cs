@@ -4,24 +4,32 @@ public class RadioInteraction : MonoBehaviour
 {
     public AudioSource radioAudio;
     public Transform player; // Assign your player's Transform in the Inspector
-    public float interactionDistance = 3f;
+    public float interactionDistance = 3f; // Distance to start playing
+    public float playingDistance = 6f; // Distance beyond which it pauses
     private bool hasPlayed = false;
+    private bool isPaused = false;
 
     void Update()
     {
         float distance = Vector3.Distance(transform.position, player.position);
-        
-        if (distance <= interactionDistance)
+
+        if (!hasPlayed && distance <= interactionDistance)
         {
-            if (!radioAudio.isPlaying && !hasPlayed)
-            {
-                radioAudio.PlayOneShot(radioAudio.clip);
-                hasPlayed = true;
-            }
+            radioAudio.Play();
+            hasPlayed = true; // Ensure it plays only once
+            isPaused = false;
         }
-        else
+        
+        if (hasPlayed && distance > playingDistance && radioAudio.isPlaying)
         {
-            hasPlayed = false; // Reset when player leaves interaction distance
+            radioAudio.Pause(); // Pause the radio instead of stopping
+            isPaused = true;
+        }
+        
+        if (isPaused && distance <= interactionDistance)
+        {
+            radioAudio.UnPause(); // Resume playback if player returns
+            isPaused = false;
         }
     }
 }

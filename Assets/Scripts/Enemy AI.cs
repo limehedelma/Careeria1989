@@ -2,9 +2,12 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class CreepyNavAgent : MonoBehaviour
 {
+    public VideoPlayer videoSource; // Assign in Inspector
+    public AudioSource audioSource; // Assign in Inspector
     public NavMeshAgent agent;
     public Transform player;
     public AudioSource noiseOnAwake;
@@ -22,6 +25,8 @@ public class CreepyNavAgent : MonoBehaviour
 
     void Awake()
     {
+        if (videoSource != null) videoSource.Stop();
+        if (audioSource != null) audioSource.Stop();
         if (noiseOnAwake) noiseOnAwake.Play();
         lastPlayerPosition = player.position;
         StartCoroutine(RandomTeleport());
