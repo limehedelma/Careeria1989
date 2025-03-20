@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class CreepyNavAgent : MonoBehaviour
 {
@@ -10,27 +11,26 @@ public class CreepyNavAgent : MonoBehaviour
     public AudioSource activeNoise;
     public float minTeleportRange = 2f; // Minimum distance from player
     public float maxTeleportRange = 10f; // Maximum distance from player
-    public float stillTimeThreshold = 15f;
-    public float boxTriggerTime = 10f;
-    public GameObject jumpscareObject;
+    public string jumpscareSceneName = "JumpscareScene"; // Assign jumpscare scene name in inspector
+    public Collider triggerBox; // Assign a specific trigger box in the inspector
+    public float stillnessThreshold = 15f; // Time before jumpscare when standing still
+    public float triggerTimeoutThreshold = 60f; // Time before jumpscare if trigger isn't hit
 
     private Vector3 lastPlayerPosition;
     private float stillTime = 0f;
-    private bool isPlayerStill = false;
-    private bool boxTriggered = false;
+    private float triggerTimeout = 0f;
 
     void Awake()
     {
         if (noiseOnAwake) noiseOnAwake.Play();
         lastPlayerPosition = player.position;
         StartCoroutine(RandomTeleport());
-        
+        StartCoroutine(TriggerTimeoutCheck());
     }
 
     void Start()
     {
         if (agent == null) agent = GetComponent<NavMeshAgent>();
-
     }
 
     void Update()
@@ -42,6 +42,20 @@ public class CreepyNavAgent : MonoBehaviour
             activeNoise.Play();
         }
 
+        // Check if player is still
+        if (Vector3.Distance(player.position, lastPlayerPosition) < 0.1f)
+        {
+            stillTime += Time.deltaTime;
+            if (stillTime >= stillnessThreshold)
+            {
+                TriggerJumpscare();
+            }
+        }
+        else
+        {
+            stillTime = 0f; // Reset timer if player moves
+        }
+        lastPlayerPosition = player.position;
     }
 
     IEnumerator RandomTeleport()
@@ -70,4 +84,28 @@ public class CreepyNavAgent : MonoBehaviour
         }
     }
 
+    IEnumerator TriggerTimeoutCheck()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1f);
+            triggerTimeout += 1f;
+
+            if (triggerBox != null && triggerBox.bounds.Contains(player.position))
+            {
+                triggerTimeout = 0f; // Reset if player is inside trigger
+            }
+
+            if (triggerTimeout >= triggerTimeoutThreshold) // Customizable timeout
+            {
+                TriggerJumpscare();
+            }
+        }
+    }
+
+    private void TriggerJumpscare()
+    {
+        Debug.Log("Jumpscare Triggered! Loading jumpscare scene...");
+        SceneManager.LoadScene(jumpscareSceneName);
+    }
 }
