@@ -8,7 +8,7 @@ public class FlashlightToggle : MonoBehaviour
     public AudioClip flashlightOffSound; // Sound for turning off
 
     private AudioSource audioSource;
-    private bool isOn = false; // Flashlight state
+    private bool isOn = true; // Flashlight state
 
     void Start()
     {
