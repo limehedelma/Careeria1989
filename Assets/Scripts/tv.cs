@@ -9,10 +9,21 @@ public class TVInteraction : MonoBehaviour
     public float playingDistance = 6f; // Distance beyond which it pauses
     private bool hasStarted = false;
     public AudioSource audioSource; // Assign in Inspector
+    public float floorHeightThreshold = 1f; // Acceptable Y-axis height difference
+
     void Update()
     {
-        // Calculate distance in the x and z axes only
-        float distance = Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(player.position.x, player.position.z));
+        // Ensure the player is on the same floor by checking Y-axis height difference
+        if (Mathf.Abs(transform.position.y - player.position.y) > floorHeightThreshold)
+        {
+            return; // Exit if player is on a different floor
+        }
+
+        // Calculate distance using both X and Z coordinates
+        float distance = Vector2.Distance(
+            new Vector2(transform.position.x, transform.position.z),
+            new Vector2(player.position.x, player.position.z)
+        );
 
         if (!hasStarted && distance <= interactionDistance)
         {

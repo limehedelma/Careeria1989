@@ -6,31 +6,37 @@ using UnityEngine.Video;
 
 public class CreepyNavAgent : MonoBehaviour
 {
-    public VideoPlayer videoSource; // Assign in Inspector
-    public AudioSource audioSource; // Assign in Inspector
+    public VideoPlayer videoSource;
+    public AudioSource audioSource;
     public NavMeshAgent agent;
     public Transform player;
     public AudioSource noiseOnAwake;
     public AudioSource activeNoise;
-    public float minTeleportRange = 2f; // Minimum distance from player
-    public float maxTeleportRange = 10f; // Maximum distance from player
-    public string jumpscareSceneName = "JumpscareScene"; // Assign jumpscare scene name in inspector
-    public Collider triggerBox; // Assign a specific trigger box in the inspector
-    public float stillnessThreshold = 15f; // Time before jumpscare when standing still
-    public float triggerTimeoutThreshold = 60f; // Time before jumpscare if trigger isn't hit
+    public float minTeleportRange = 2f;
+    public float maxTeleportRange = 10f;
+    public string jumpscareSceneName = "JumpscareScene";
+    public Collider triggerBox;
+    public float stillnessThreshold = 15f;
+
+    public VoicelinePlayer voicelinePlayer;
+    public float voicelineDelay = 2f;
 
     private Vector3 lastPlayerPosition;
     private float stillTime = 0f;
-    private float triggerTimeout = 0f;
+    private bool jumpscareTriggered = false;
+    private bool hasPlayedActiveNoiseVoiceline = false;
 
     void Awake()
     {
         if (videoSource != null) videoSource.Stop();
         if (audioSource != null) audioSource.Stop();
-        if (noiseOnAwake) noiseOnAwake.Play();
+        if (noiseOnAwake != null)
+        {
+            noiseOnAwake.Play();
+            StartCoroutine(WaitForAwakeNoise());
+        }
         lastPlayerPosition = player.position;
         StartCoroutine(RandomTeleport());
-        StartCoroutine(TriggerTimeoutCheck());
     }
 
     void Start()
@@ -40,14 +46,22 @@ public class CreepyNavAgent : MonoBehaviour
 
     void Update()
     {
+        if (jumpscareTriggered) return;
+
         agent.SetDestination(player.position);
 
         if (!noiseOnAwake.isPlaying && !activeNoise.isPlaying)
         {
             activeNoise.Play();
+
+            // Ensure the voiceline only plays once
+            if (!hasPlayedActiveNoiseVoiceline)
+            {
+                hasPlayedActiveNoiseVoiceline = true;
+                StartCoroutine(PlayVoicelineAfterDelay());
+            }
         }
 
-        // Check if player is still
         if (Vector3.Distance(player.position, lastPlayerPosition) < 0.1f)
         {
             stillTime += Time.deltaTime;
@@ -58,28 +72,25 @@ public class CreepyNavAgent : MonoBehaviour
         }
         else
         {
-            stillTime = 0f; // Reset timer if player moves
+            stillTime = 0f;
         }
         lastPlayerPosition = player.position;
     }
 
     IEnumerator RandomTeleport()
     {
-        while (true)
+        while (!jumpscareTriggered)
         {
             yield return new WaitForSeconds(Random.Range(5, 10));
 
             Vector3 randomOffset;
             do
             {
-                // Get the direction behind the player
                 Vector3 behindDirection = -player.forward.normalized;
-
-                // Randomize distance within min/max range
                 float distance = Random.Range(minTeleportRange, maxTeleportRange);
                 randomOffset = behindDirection * distance;
                 randomOffset.y = 0;
-            } while (randomOffset.magnitude < minTeleportRange); // Ensure it's outside min range
+            } while (randomOffset.magnitude < minTeleportRange);
 
             NavMeshHit hit;
             if (NavMesh.SamplePosition(player.position + randomOffset, out hit, maxTeleportRange, NavMesh.AllAreas))
@@ -89,28 +100,53 @@ public class CreepyNavAgent : MonoBehaviour
         }
     }
 
-    IEnumerator TriggerTimeoutCheck()
+    private void TriggerJumpscare()
     {
-        while (true)
+        if (jumpscareTriggered) return;
+
+        jumpscareTriggered = true;
+        Debug.Log("Jumpscare Triggered! Loading jumpscare scene...");
+        SceneManager.LoadScene(jumpscareSceneName);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other == triggerBox && !jumpscareTriggered)
         {
-            yield return new WaitForSeconds(1f);
-            triggerTimeout += 1f;
+            TriggerJumpscare();
+        }
+    }
 
-            if (triggerBox != null && triggerBox.bounds.Contains(player.position))
-            {
-                triggerTimeout = 0f; // Reset if player is inside trigger
-            }
+    IEnumerator WaitForAwakeNoise()
+    {
+        yield return new WaitWhile(() => noiseOnAwake.isPlaying);
 
-            if (triggerTimeout >= triggerTimeoutThreshold) // Customizable timeout
+        if (voicelinePlayer != null)
+        {
+            voicelinePlayer.PlayVoiceline(0);
+            yield return new WaitForSeconds(voicelinePlayer.voicelines[0].length);
+        }
+
+        if (activeNoise != null)
+        {
+            activeNoise.Play();
+
+            // Make sure the voiceline only plays once
+            if (!hasPlayedActiveNoiseVoiceline)
             {
-                TriggerJumpscare();
+                hasPlayedActiveNoiseVoiceline = true;
+                StartCoroutine(PlayVoicelineAfterDelay());
             }
         }
     }
 
-    private void TriggerJumpscare()
+    IEnumerator PlayVoicelineAfterDelay()
     {
-        Debug.Log("Jumpscare Triggered! Loading jumpscare scene...");
-        SceneManager.LoadScene(jumpscareSceneName);
+        yield return new WaitForSeconds(voicelineDelay);
+
+        if (voicelinePlayer != null)
+        {
+            voicelinePlayer.PlayVoiceline(1);
+        }
     }
 }
