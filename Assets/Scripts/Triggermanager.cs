@@ -3,13 +3,12 @@ using UnityEngine;
 public class TriggerManager : MonoBehaviour
 {
     public Collider[] triggerBoxes; // Assign 6 trigger boxes in the inspector
-    public GameObject aiPrefab;     // Assign AI prefab to spawn
-    public Transform spawnPoint;    // Where the AI should spawn
+    public GameObject aiObject;     // Assign AI GameObject to activate
     public GameObject[] objectsToActivate;   // Objects to activate
     public GameObject[] objectsToDeactivate; // Objects to deactivate
 
     private int triggeredCount = 0; // Counter for triggered boxes
-    private bool aiSpawned = false; // Ensures AI spawns only once
+    private bool aiActivated = false; // Ensures AI activates only once
 
     private void Start()
     {
@@ -32,12 +31,19 @@ public class TriggerManager : MonoBehaviour
     {
         triggeredCount++;
 
-        if (triggeredCount >= triggerBoxes.Length && !aiSpawned)
+        if (triggeredCount >= triggerBoxes.Length && !aiActivated)
         {
-            aiSpawned = true;
+            aiActivated = true;
 
-            // Spawn the AI
-            Instantiate(aiPrefab, spawnPoint.position, spawnPoint.rotation);
+            // Activate the AI GameObject
+            if (aiObject != null)
+            {
+                aiObject.SetActive(true);
+            }
+            else
+            {
+                Debug.LogError("AI object is not assigned!");
+            }
 
             // Activate objects
             foreach (GameObject obj in objectsToActivate)
@@ -51,7 +57,7 @@ public class TriggerManager : MonoBehaviour
                 obj.SetActive(false);
             }
 
-            Debug.Log("AI spawned and objects toggled.");
+            Debug.Log("AI activated and objects toggled.");
         }
     }
 }

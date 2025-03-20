@@ -16,6 +16,7 @@ public class EnableOnTrigger : MonoBehaviour
             {
                 objectToEnable.SetActive(true); // Enable the object
                 Debug.Log(objectToEnable.name + " has been enabled!");
+                Destroy(gameObject);
             }
             else
             {

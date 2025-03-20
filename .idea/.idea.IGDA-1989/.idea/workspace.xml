@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f4dad1c9-fd32-4b85-b3d4-072a85daa067" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.IGDA-1989/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.IGDA-1989/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy AI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy AI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/radio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/radio.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/tv.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/tv.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MapScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MapScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DoorTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DoorTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Triggermanager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Triggermanager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,6 +137,10 @@
       <workItem from="1742466797971" duration="148000" />
       <workItem from="1742467140484" duration="49000" />
       <workItem from="1742467205021" duration="459000" />
+      <workItem from="1742484455689" duration="65000" />
+      <workItem from="1742485643182" duration="20000" />
+      <workItem from="1742486107512" duration="7000" />
+      <workItem from="1742486774966" duration="6000" />
     </task>
     <servers />
   </component>
